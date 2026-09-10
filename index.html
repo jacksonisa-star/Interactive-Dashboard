@@ -8,7 +8,6 @@
 
     <title>Document</title>
 
-    <script src="js/script.js" defer></script>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -40,10 +39,24 @@
     </noscript>
 
     <div class="container">
-        <div class="row">
+    <div class="row">
+        <div class="col" id="weekly-tasks">
             <!-- Dashboard Content -->
+
+            <div id="goal-message"></div>
+
+            <form>
+                <input type="text" placeholder="Name" id="userName">
+                <input type="number" placeholder="Daily Task Goal" id="dailyGoal">
+                <input type="number" placeholder="Weekly Bonus Tasks" id="bonusTasks">
+
+                <button type="button" id="goal-btn">Calculate</button>
+            </form>
+
+             <script src="js/task-manager.js"></script>
         </div>
     </div>
+</div>
 
 </body>
 

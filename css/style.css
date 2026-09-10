@@ -1,4 +1,11 @@
 body {
     background-color: lightblue;
-    font-type: #bb1e1e;
+    font-style: #bb1e1e;
+}
+#weekly-tasks {
+    padding: 10px;
+}
+
+#goal-btn {
+    margin: 5px;
 }
