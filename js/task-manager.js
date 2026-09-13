@@ -18,8 +18,8 @@ function weeklyGoal(userName, dailyGoal, bonusTasks) {
 document.getElementById("goal-btn").addEventListener("click", function(event) {
     event.preventDefault();
     let userName = document.getElementById("userName").value;
-    let dailyGoal = parsenInt(document.getElementById("dailyGoal").value);
-    let bonusTasks = parsenInt(document.getElementById("bonusTasks").value);
+    let dailyGoal = Number(document.getElementById("dailyGoal").value);
+    let bonusTasks = Number(document.getElementById("bonusTasks").value);
 
     weeklyGoal(userName, dailyGoal, bonusTasks);
 });
