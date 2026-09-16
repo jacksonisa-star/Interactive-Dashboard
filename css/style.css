@@ -1,6 +1,6 @@
 body {
     background-color: lightblue;
-    font-style: #bb1e1e;
+    color: #bb1e1e;
 }
 #weekly-tasks {
     padding: 10px;
@@ -8,4 +8,22 @@ body {
 
 #goal-btn {
     margin: 5px;
+}
+
+#metric-converter {
+
+    padding: 10px;
+
+}
+
+#convert-btn {
+
+    margin: 5px;
+
+}
+
+#conversion-result {
+
+    margin-top: 10px;
+
 }
