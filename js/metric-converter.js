@@ -1,4 +1,4 @@
-let input = document.getElementById("input-value");
+let input_value = document.getElementById("input-value");
 let select = document.getElementsByTagName("select")[0];
 let button = document.getElementById("convert-btn");
 let output = document.getElementById("conversion-result");
