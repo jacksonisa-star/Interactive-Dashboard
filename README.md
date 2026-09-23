@@ -58,3 +58,7 @@ if (conversion === 'inch to centimeter') {
     alert('Invalid conversion choice');
 }
 ```
+
+# Magic Eight Ball
+
+This feature allows users to enter a yes/no question and clicking the Eight Ball to recieve an answer.
