@@ -4,10 +4,8 @@ This project is a web-based dashboard built for WEB-115 to demonstrate interacti
 
 ## TODO: Future Enhancements
 
-- [ ] Add a metric conversion tool.
-
+- [x] Add a metric conversion tool.
 - [ ] Integrate a task list with array storage.
-
 - [ ] Add JavaScript logic for a live clock.
 - [x] Add a weekly task goal calculator.
 
@@ -20,44 +18,14 @@ This feature calculates a user's weekly task goal based on their daily task goal
 This application converts measurements between Imperial and Metric units. It can convert inches, feet, yards, miles, centimeters, meters, and kilometers.
 
 ### Logic and Pseudocode
-```javascript
-// Metric Converter
 
-var value = prompt('Enter the value to convert:');
-value = parseFloat(value);
-
-var conversion = prompt('Enter the conversion choice (e.g., inch to centimeter):');
-var result;
-
-if (conversion === 'inch to centimeter') {
-    result = value * 2.54;
-    alert(result);
-} else if (conversion === 'foot to centimeter') {
-    result = value * 30.48;
-    alert(result);
-} else if (conversion === 'yard to meter') {
-    result = value * 0.91;
-    alert(result);
-} else if (conversion === 'mile to kilometer') {
-    result = value * 1.61;
-    alert(result);
-} else if (conversion === 'centimeter to inch') {
-    result = value * 0.39;
-    alert(result);
-} else if (conversion === 'centimeter to foot') {
-    result = value * 0.0328;
-    alert(result);
-} else if (conversion === 'meter to yard') {
-    result = value * 1.09;
-    alert(result);
-} else if (conversion === 'kilometer to mile') {
-    result = value * 0.62;
-    alert(result);
-} else {
-    alert('Invalid conversion choice');
-}
-```
+1. Get the value entered by the user.
+2. Get the conversion choice selected by the user.
+3. Convert the value based on the selected conversion.
+4. Store the converted value as the result.
+5. Display the original value and converted value to the user.
+6. If the conversion is not valid, display an error message.
 
 # Magic Eight Ball
 
-This feature allows users to enter a yes/no question and clicking the Eight Ball to recieve an answer.
+This feature allows users to enter a yes/no question and click the Eight Ball to receive an answer.
