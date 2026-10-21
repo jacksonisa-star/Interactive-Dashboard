@@ -27,12 +27,12 @@ document.getElementById("goal-btn").addEventListener("click", function(event) {
     weeklyGoal(userName, dailyGoal, bonusTasks);
 });
 
-// Get the task list; task input, and Add Task button from the HTML 
+// Get the task list, task input, and Add Task button from the HTML
 let taskList = document.getElementById("task-list");
 let taskName = document.getElementById("task-name");
 let addTask = document.getElementById("add-task");
 
-// Create a new unordered list for the user's tasks 
+// Create a new unordered list for the user's tasks
 let userTaskList = document.createElement("ul");
 
 // Give the new unordered list a unique ID
@@ -41,24 +41,72 @@ userTaskList.id = "user-tasks";
 // Add the unordered list to the task-list div
 taskList.appendChild(userTaskList);
 
-// Run the task manager code when the Add Task button is clicked
-addTask.addEventListener("click", function(event) {
-    event.preventDefault();
+// Add a task as an object and display it using a DOM node
+function addNewTask() {
+    let task = {
+        id: Date.now(),
+        name: taskName.value,
+        priority: document.getElementById("task-priority").value,
+        isImportant: document.getElementById("task-important").checked,
+        isCompleted: false
+    };
 
-    // Get the task entered by the user
-    let task = taskName.value;
-
-    // Add the task to the myTasks array
+    // Store the task object in the array
     myTasks.push(task);
 
     // Create a new list item for the task
     let listItem = document.createElement("li");
 
-    // Display the user's task inside the new list item 
-    listItem.innerHTML = task;
+    // Create a seperate DOM node for the task text
+    let taskText = document.createElement("span");
+    taskText.textContent = task.name + " - " + task.priority;
+    listItem.appendChild(taskText);
+    // Highlight important tasks in red
+    if (task.isImportant) {
+        listItem.style.color = "red";
+    }
 
+    // Create a complete button using a DOM node
+    let completeButton = document.createElement("button");
+    completeButton.type = "button";
+    completeButton.textContent = "Complete";
+
+    // Mark this task complete when the button is clicked
+    completeButton.addEventListener("click", function() {
+        markTaskComplete(task, taskText);
+    });
+
+    // Add the complete button to the list item
+    listItem.appendChild(completeButton);
     // Add the new task to the unordered list
     userTaskList.appendChild(listItem);
-    
-});
 
+    // Log the full task list
+    console.log(JSON.stringify(myTasks));
+}
+function markTaskComplete(task, taskText) {
+    task.isCompleted = true;
+    taskText.style.textDecoration = "line-through";
+
+    // Log the updated task list
+    console.log(JSON.stringify(myTasks));
+}
+
+// Call the add-task function when the button is clicked
+addTask.addEventListener("click", function(event) {
+    event.preventDefault();
+    addNewTask();
+});
+// Remove all tasks from the array and the webpage
+function deleteTaskList() {
+    myTasks = [];
+    userTaskList.textContent = "";
+
+    // Log the empty task list
+    console.log(JSON.stringify(myTasks));
+}
+
+// Run the function when Delete List is clicked
+document.getElementById("delete-list").addEventListener("click", function() {
+    deleteTaskList();
+});
