@@ -62,4 +62,3 @@ addTask.addEventListener("click", function(event) {
     
 });
 
-
