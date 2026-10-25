@@ -19,9 +19,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/magic-eight-ball.css">
 </head>
 
 <body>
@@ -42,7 +40,6 @@
     <div class="container">
         <div class="row">
 
-            <!-- Weekly Tasks -->
             <div class="col" id="weekly-tasks">
 
                 <h2>Weekly Task Goals</h2>
@@ -59,33 +56,39 @@
                 </form>
 
                 <div id="task-list">
-
                     <h3>Weekly Task List</h3>
 
                     <p>Enter a task below to manage your goals.</p>
 
-                    <form>
+                    <form id="task-form">
                         <label for="task-name">Enter task:</label>
+                        <input type="text" id="task-name" required>
 
-                        <input type="text" id="task-name">
+                        <label for="task-priority">Priority:</label>
+                        <select id="task-priority">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
 
-                        <button type="button" id="add-task">
-                            Add Task
-                        </button>
+                        <label for="task-important">
+                            <input type="checkbox" id="task-important">Important
+                        </label>
+
+                        <button type="submit" id="add-task">Add Task</button>
                     </form>
 
+                    <button type="button" id="delete-list">Delete List</button>
                 </div>
 
+                <script src="js/task-manager.js"></script>
             </div>
 
-
-            <!-- Metric Converter -->
             <div class="col" id="metric-converter">
 
                 <h2>Imperial/Metric Converter</h2>
 
                 <form>
-
                     <input type="number" id="input-value" placeholder="Enter value">
 
                     <select id="conversion-type">
@@ -99,60 +102,41 @@
                         <option>Kilometers to Miles</option>
                     </select>
 
-                    <button type="button" id="convert-btn">
-                        Convert
-                    </button>
-
+                    <button type="button" id="convert-btn">Convert</button>
                 </form>
 
                 <div id="conversion-result"></div>
 
+                <script src="js/metric-converter.js" defer></script>
             </div>
 
-
-            <!-- Magic Eight Ball -->
             <div class="col" id="magic-eight-ball">
+            
+
+                <script src="M6-AssignmentFiles/js/magic-eight-ball.js" defer></script>
+                <link rel="stylesheet" href="M6-AssignmentFiles/css/magic-eight-ball.css">
 
                 <h2 class="heading">Magic Eight Ball</h2>
 
                 <form>
-
-                    <p>
-                        Type a yes/no question below, then click on the Eight Ball below to get your answer!
-                    </p>
+                    <p>Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
 
                     <input id="question" name="question" size="80">
 
                     <div id="magicEightBall">
-
                         <div id="circle"></div>
-
-                        <img id="ball"
-                            src="img/magic-eight-ball.png"
-                            alt="Magic Eight Ball">
-
+                        <img id="ball" src="M6-AssignmentFiles/img/magic-eight-ball.png" alt="Magic Eight Ball">
                     </div>
 
-                    <button id="reset" name="reset" type="reset">
-                        Ask another question
-                    </button>
-
+                    <button id="reset" name="reset" type="reset">Ask another question</button>
                 </form>
 
                 <br>
-
             </div>
 
         </div>
     </div>
 
-
-    <!-- JavaScript -->
-    <script src="js/task-manager.js"></script>
-    <script src="js/metric-converter.js"></script>
-    <script src="js/magic-eight-ball.js"></script>
-
 </body>
 
 </html>
-```
