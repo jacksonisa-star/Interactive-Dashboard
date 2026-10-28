@@ -6,7 +6,7 @@ let output = document.getElementById("conversion-result");
 button.addEventListener("click", function(event) {
     event.preventDefault();
 
-    let value = parseFloat(input.value);
+    let value = parseFloat(input_value.value);
     let conversion = select.selectedIndex;
     let result;
 
