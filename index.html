@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -20,6 +19,9 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/digital-clock.css">
+
+    <script src="js/digital-clock.js" defer></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
         Unfortunately, your browser does not support JavaScript.
     </noscript>
 
-    <div class="container">
+    <main class="container">
         <div class="row">
 
             <div class="col" id="weekly-tasks">
@@ -111,7 +113,6 @@
             </div>
 
             <div class="col" id="magic-eight-ball">
-            
 
                 <script src="M6-AssignmentFiles/js/magic-eight-ball.js" defer></script>
                 <link rel="stylesheet" href="M6-AssignmentFiles/css/magic-eight-ball.css">
@@ -135,7 +136,16 @@
             </div>
 
         </div>
-    </div>
+
+        <!-- Digital Clock -->
+        <div class="row">
+            <div id="digital-clock" class="col">
+                <h3>Current Time &amp; Date</h3>
+                <p id="clock-face"></p>
+                <p id="calendar-date"></p>
+            </div>
+        </div>
+    </main>
 
 </body>
 
